@@ -1,0 +1,46 @@
+server:
+   port: 1111 # 指定该Eureka实例的端口
+eureka:
+   instance:
+      hostname: localhost
+   client:
+      serviceUrl:
+         defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+spring:
+   application:
+      name: account-service
+   datasource:
+      name: service-account
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/bs-dev?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: yanghua520
+      # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource 
+      druid:
+         # 连接池最大使用连接数
+         max-active: 20
+         # 初始化连接大小
+         initial-size: 1
+         # 获取连接最大等待时间
+         max-wait: 60000
+         # 连接池最小空闲
+         min-idle: 3
+         # 自动清除无用连接
+         remove-abandoned: true
+         # 清除无用连接的等待时间
+         remove-abandoned-timeout: 180
+         # 连接属性
+         connection-properties: clientEncoding=UTF-8
+mybatis-plus:
+   type-handlers-package: com.tuyahuwai.core.db
+   configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logback:
+   logDir: log/dev
+
+logging:
+   level:
+      com.tuyahuwai.service.impl: trace
+      com.tuyahuwai.controller: trace
