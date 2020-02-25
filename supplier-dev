@@ -1,5 +1,3 @@
-server:
-   port: 2222 # 指定该Eureka实例的端口
 eureka:
    instance:
       hostname: localhost
