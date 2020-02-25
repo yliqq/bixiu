@@ -1,5 +1,3 @@
-server:
-   port: 1111 # 指定该Eureka实例的端口
 eureka:
    instance:
       hostname: localhost
@@ -39,7 +37,6 @@ mybatis-plus:
 
 logback:
    logDir: log/dev
-
 logging:
    level:
       com.tuyahuwai.service.impl: trace
