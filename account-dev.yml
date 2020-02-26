@@ -6,7 +6,7 @@ eureka:
          defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 spring:
    application:
-      name: account-service1
+      name: account-service
    datasource:
       name: service-account
       driver-class-name: com.mysql.jdbc.Driver
